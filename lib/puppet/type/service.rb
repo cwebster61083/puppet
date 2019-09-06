@@ -71,6 +71,11 @@ module Puppet
         provider.mask
       end
 
+      #This only works on Windows systems.
+      newvalue(:delayed, :event => :service_delayed_start) do
+        provider.delayed_start
+      end
+
       def retrieve
         provider.enabled?
       end
